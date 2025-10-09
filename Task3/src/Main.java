@@ -14,8 +14,31 @@
     Test også med filnavne der ikke eksisterer
  */
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
 
+        while(true) {
+            try {
+                System.out.println("please write your file name");
+                Scanner scan = new Scanner(System.in); // user can write a input
+                String fileInput = scan.next(); // the input get a variabel
+
+                File file = new File("src/"+fileInput+".txt"); // inset the input of the file and Call the file.
+                Scanner scanFile = new Scanner(file); // scanner read the file
+                while(scanFile.hasNext()) {
+                    String readFile = scanFile.nextLine(); // read file
+                    System.out.println(readFile); // give output
+                }
+                break;
+            }
+            catch (FileNotFoundException e){
+                System.out.println("Sorry the wanted file not exist under this name");
+
+            }
+        }
     }
 }
