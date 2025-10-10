@@ -7,7 +7,7 @@ public class FileIO {
     public String readFile(String filnavn) throws FileNotFoundException {
         File file = new File("src/" + filnavn + ".txt"); // henter fil
         String readFil = null;
-        try {
+        //try {
             Scanner scanFile = new Scanner(file); // Opret Scanner med File
 
             while (scanFile.hasNext()) { // læser så længe der er flere
@@ -17,10 +17,10 @@ public class FileIO {
             }
             scanFile.close();// lukker scanner
 
-        } catch (FileNotFoundException e) {
-            System.out.println("Sorry the wanted file.txt not exist under this name");
+        //} catch (FileNotFoundException e) {
+            //System.out.println("Sorry the wanted file.txt not exist under this name");
 
-        }
+      //  }
         return readFil;
     }
 
